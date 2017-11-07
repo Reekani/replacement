@@ -1,12 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 
-import { AppComponent } from './app.component';
-import { TopBarComponent } from './containers/top-bar/top-bar.component';
-import { LeftBarComponent } from './containers/left-bar/left-bar.component';
-import { CenterAreaComponent } from './containers/center-area/center-area.component';
-
+import {AppComponent} from './app.component';
+import {TopBarComponent} from './containers/top-bar/top-bar.component';
+import {LeftBarComponent} from './containers/left-bar/left-bar.component';
+import {CenterAreaComponent} from './containers/center-area/center-area.component';
+import {ClarityModule} from 'clarity-angular';
 
 @NgModule({
   declarations: [
@@ -16,9 +16,11 @@ import { CenterAreaComponent } from './containers/center-area/center-area.compon
     CenterAreaComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ClarityModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
