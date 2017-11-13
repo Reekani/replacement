@@ -1,3 +1,31 @@
-<p>
-  top-bar works!
-</p>
+<header class="header-6">
+  <div class="branding">
+    <a href="..." class="nav-link">
+      <clr-icon shape="sync"></clr-icon>
+      <span class="title">Replacement</span>
+    </a>
+  </div>
+  <div class="header-nav">
+    <a href="javascript://" class="active nav-link nav-text">Ogłoszenia</a>
+    <a href="javascript://" class="nav-link nav-text">Regulamin</a>
+    <a href="javascript://" class="nav-link nav-text">Kontakt</a>
+  </div>
+  <form class="search">
+    <label for="search_input">
+      <input id="search_input" type="text" placeholder="Szukaj ogłoszeń...">
+    </label>
+  </form>
+  <div class="header-actions">
+    <clr-dropdown>
+      <button class="nav-icon" clrDropdownTrigger>
+        <clr-icon shape="user"></clr-icon>
+        <clr-icon shape="caret down"></clr-icon>
+      </button>
+      <clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">
+        <a href="..." clrDropdownItem>Profil</a>
+        <a href="..." clrDropdownItem>Ustawienia</a>
+        <a href="..." clrDropdownItem>Wyloguj</a>
+      </clr-dropdown-menu>
+    </clr-dropdown>
+  </div>
+</header>
