@@ -1,4 +1,7 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {AppStore} from '../../shared/store/model/app.store';
+import {Store} from '@ngrx/store';
+import {selectUserLogin} from '../../shared/store/selectors/user.selectors';
 
 @Component({
   selector: 'app-left-bar',
@@ -7,10 +10,16 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class LeftBarComponent implements OnInit {
+  private userLogin: string;
 
-  constructor() { }
+  constructor(private store: Store<AppStore>) {
+  }
 
   ngOnInit() {
+    this.store.select(selectUserLogin).subscribe(login => {
+      this.userLogin = login;
+      console.log(this.userLogin);
+    });
   }
 
 }

@@ -7,6 +7,11 @@ import {TopBarComponent} from './containers/top-bar/top-bar.component';
 import {LeftBarComponent} from './containers/left-bar/left-bar.component';
 import {CenterAreaComponent} from './containers/center-area/center-area.component';
 import {ClarityModule} from 'clarity-angular';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import {StoreModule} from '@ngrx/store';
+// import {EffectsModule} from '@ngrx/effects';
+import {userReducers} from './shared/store/reducers/user.reducer';
+// import {UserEffects} from './shared/store/effects/user.effects';
 
 @NgModule({
   declarations: [
@@ -18,9 +23,17 @@ import {ClarityModule} from 'clarity-angular';
   imports: [
     BrowserModule,
     ClarityModule.forRoot(),
+    StoreDevtoolsModule.instrument(),
+    StoreModule.forRoot({
+      user: userReducers
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+
+// EffectsModule.forRoot([
+// UserEffects
+// ])
