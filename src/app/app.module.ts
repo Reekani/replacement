@@ -11,6 +11,7 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {StoreModule} from '@ngrx/store';
 // import {EffectsModule} from '@ngrx/effects';
 import {userReducers} from './shared/store/reducers/user.reducer';
+import {uiReducers} from './shared/store/reducers/ui.reducer';
 // import {UserEffects} from './shared/store/effects/user.effects';
 
 @NgModule({
@@ -25,7 +26,8 @@ import {userReducers} from './shared/store/reducers/user.reducer';
     ClarityModule.forRoot(),
     StoreDevtoolsModule.instrument(),
     StoreModule.forRoot({
-      user: userReducers
+      user: userReducers,
+      UI: uiReducers
     })
   ],
   providers: [],

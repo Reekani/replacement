@@ -11,6 +11,7 @@ import {selectUserLogin} from '../../shared/store/selectors/user.selectors';
 })
 export class LeftBarComponent implements OnInit {
   private userLogin: string;
+  private loginInProgress = false;
 
   constructor(private store: Store<AppStore>) {
   }
@@ -20,6 +21,11 @@ export class LeftBarComponent implements OnInit {
       this.userLogin = login;
       console.log(this.userLogin);
     });
+  }
+
+  submitLogin(){
+    this.loginInProgress = true;
+    return false;
   }
 
 }

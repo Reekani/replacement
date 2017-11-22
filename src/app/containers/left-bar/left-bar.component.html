@@ -12,7 +12,7 @@
           Pamiętaj mnie
         </label>
       </div>
-      <button type="submit" class="btn btn-primary btn-login-mt">Zaloguj</button>
+      <button type="submit" [clrLoading]="loginInProgress" (click)="submitLogin()" class="btn btn-success-outline">Zaloguj</button>
       <a href="javascript://" class="signup">Rejestracja</a>
     </div>
   </form>
